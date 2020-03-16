@@ -10,15 +10,12 @@ namespace Robots_vs_Dinosaurs
     {
         //member variable
         public string weapon;
-        public int attackPower; //amt of damage attack will do
-        public int powerDrain; //power cost for attack
-
+        
         //constructor
-        public Weapon(string weapon, int attackPower, int powerDrain)
+        public Weapon(string weapon)
         {
             this.weapon = weapon;
-            this.attackPower = attackPower;
-            this.powerDrain = powerDrain;
+            
         }
     }
 }

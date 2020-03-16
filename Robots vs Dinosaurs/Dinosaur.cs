@@ -23,6 +23,19 @@ namespace Robots_vs_Dinosaurs
             dinoEnergy = 100;
         }
         //member methods
+
+        public void AttackARobo(Robot robot)
+        {
+            robot.robotHealth -= dinoPower;
+            dinoEnergy -= (2 * dinoPower);
+        }
+        public void RegenerateEnergy()
+        {
+            dinoEnergy = 100;
+        }
+        
+
+        
     }
 }
 
