@@ -21,9 +21,5 @@ namespace Robots_vs_Dinosaurs
             Dinosaur velociraptor = new Dinosaur("velociraptor", 50, 20);        
             dinosaurs.Add(velociraptor);
         }
-
-        
-
-
     }
 }

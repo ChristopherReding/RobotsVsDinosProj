@@ -17,8 +17,7 @@ namespace Robots_vs_Dinosaurs
         public Weapon(string weapon, int attackPower)
         {
             this.weapon = weapon;
-            this.attackPower = attackPower;
-                       
+            this.attackPower = attackPower;                       
         }
     }
 }

@@ -11,11 +11,10 @@ namespace Robots_vs_Dinosaurs
         //member variables
 
         public string robotName; //robot name
-        public int robotHealth; 
+        public int robotHealth; //robo dies when this hits 0
         public int robotPowerLevel; //energy will be required to attack during take turn, otherwise sits turn out
-        public int robotAttackPower;
-        public Weapon weapon; //need to find a way to utilize this...
-        
+        public int robotAttackPower; //strength of attack defined by weapon chosen
+                
 
         //constructor
         public Robot(string roborobotNametType, int robotHealth, int attack)
@@ -24,11 +23,8 @@ namespace Robots_vs_Dinosaurs
             this.robotHealth = robotHealth;            
             robotPowerLevel = 100;
             this.robotAttackPower = PickUpWeapon(); 
-
-
         }
         //member methods
-
         public void AttackADino(Dinosaur dinosaur)
         {
             dinosaur.dinoHealth -= robotAttackPower;
@@ -53,8 +49,6 @@ namespace Robots_vs_Dinosaurs
             int indexOfChosenWeapon = Convert.ToInt32(Console.ReadLine())-1;
             Console.WriteLine($"You armed {robotName} with the {weapons[indexOfChosenWeapon].weapon}\n");
             return weapons[indexOfChosenWeapon].attackPower;
-
-
         }
 
     }

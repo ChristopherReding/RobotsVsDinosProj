@@ -11,15 +11,15 @@ namespace Robots_vs_Dinosaurs
         //member variables
         public string dinoType; //dino name
         public int dinoHealth; //dino dies when this hits 0
-        public int dinoEnergy; //energy will be required to attack during take turn
-        public int dinoPower; //strength dino's attack
+        public int dinoEnergy; //energy will be required to attack during 'take turn'
+        public int dinoPower; //strength dino's attack, determined by chosen attack method
 
         //constructor
         public Dinosaur(string type, int health, int power)
         {
             this.dinoType = type;
             this.dinoHealth = health;
-            this.dinoPower = ChooseAttackMethod(); //will be replaced by chosen attack method
+            this.dinoPower = ChooseAttackMethod(); 
             dinoEnergy = 100;
         }
         //member methods
@@ -50,10 +50,7 @@ namespace Robots_vs_Dinosaurs
             int indexOfChosenAttackMethod = Convert.ToInt32(Console.ReadLine())-1;
             Console.WriteLine($"{dinoType} will attack with {dinoAttacksArray[indexOfChosenAttackMethod].attackMethod}\n");
             return dinoAttacksArray[indexOfChosenAttackMethod].attackPower;
-        }
-
-
-        
+        }        
     }
 }
 

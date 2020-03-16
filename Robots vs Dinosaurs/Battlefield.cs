@@ -43,7 +43,6 @@ namespace Robots_vs_Dinosaurs
                 PlayARound();
                 round++;
                 Console.ReadLine();
-
             }
             
             if (dinoHerd.dinosaurs.Count == 0 && roboFleet.robots.Count == 0)
@@ -87,7 +86,6 @@ namespace Robots_vs_Dinosaurs
                 Console.ReadLine();
                 TakeATurnDinos();
             }
-
         }
 
         public bool FlipACoin()
@@ -130,15 +128,12 @@ namespace Robots_vs_Dinosaurs
                         {
                             roboFleet.robots.Remove(roboFleet.robots[attackedRobot]);
                         }
-
                     }
                     else
                     {
                         Console.WriteLine($"{dinoHerd.dinosaurs[i].dinoType} missed\n");
                     }
-
                 }
-
             }
         }
 
