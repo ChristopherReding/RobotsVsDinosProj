@@ -11,11 +11,15 @@ namespace Robots_vs_Dinosaurs
         //member variable
         public Herd dinoHerd;
         public Fleet roboFleet;
+        
         //constructor
         public Battlefield()
         {
-            dinoHerd = new Herd();
+            Console.WriteLine("Welcome to Robots vs Dinosaurs! \nfirst step, let's arm the robots!\n");
             roboFleet = new Fleet();
+            Console.WriteLine("Next, let's choose which attacks the dinosaurs will use!\n");
+            dinoHerd = new Herd();
+            Console.WriteLine("Prepare for battle!\n");
         }
 
         //member methods
@@ -24,7 +28,7 @@ namespace Robots_vs_Dinosaurs
             int round = 0;
             while (dinoHerd.dinosaurs.Count > 0 && roboFleet.robots.Count > 0)
             {                                
-                Console.WriteLine($"Results of round {round}:\n");
+                Console.WriteLine($"Results of round {round}:\n---------------------");
                 foreach(Dinosaur dinosaur in dinoHerd.dinosaurs)
                 {
                     Console.WriteLine($"{dinosaur.dinoType}) Health: {dinosaur.dinoHealth}  Energy: {dinosaur.dinoEnergy}");
@@ -33,9 +37,9 @@ namespace Robots_vs_Dinosaurs
                 foreach(Robot robot in roboFleet.robots)
                 {
                     Console.WriteLine($"{robot.robotName}) Health: {robot.robotHealth}  Power: {robot.robotPowerLevel} ");
-                }
+                }                
+                Console.WriteLine("---------------------\n");
                 Console.ReadLine();
-                Console.WriteLine("\n\n");
                 PlayARound();
                 round++;
                 Console.ReadLine();

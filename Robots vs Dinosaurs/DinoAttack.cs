@@ -6,19 +6,17 @@ using System.Threading.Tasks;
 
 namespace Robots_vs_Dinosaurs
 {
-    class Weapon
+    class DinoAttack
     {
-        //member variable
-        public string weapon;
-        public int attackPower;        
-        
+        //member variables
+        public string attackMethod;
+        public int attackPower;
 
         //constructor
-        public Weapon(string weapon, int attackPower)
+        public DinoAttack(string attackMethod, int attackPower)
         {
-            this.weapon = weapon;
+            this.attackMethod = attackMethod;
             this.attackPower = attackPower;
-                       
         }
     }
 }

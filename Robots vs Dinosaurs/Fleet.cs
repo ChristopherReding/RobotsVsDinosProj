@@ -11,12 +11,12 @@ namespace Robots_vs_Dinosaurs
         public List<Robot> robots = new List<Robot>();
 
         public Fleet()
-        {
-            Robot roomba = new Robot("Roomba", 50, 20);
+        {            
+            Robot roomba = new Robot("Roomba", 50, 0);
             robots.Add(roomba);
-            Robot hal = new Robot("Hal", 150, 10);
+            Robot hal = new Robot("Hal", 150, 0);
             robots.Add(hal);
-            Robot johnnyFive = new Robot("Johnny Five", 100, 15);
+            Robot johnnyFive = new Robot("Johnny Five", 100, 0);
             robots.Add(johnnyFive);
         }
     }

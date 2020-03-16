@@ -21,10 +21,11 @@ namespace Robots_vs_Dinosaurs
         public Robot(string roborobotNametType, int robotHealth, int attack)
         {
             this.robotName = roborobotNametType;
-            this.robotHealth = robotHealth;
-            this.robotAttackPower = attack;
+            this.robotHealth = robotHealth;            
             robotPowerLevel = 100;
-                     
+            this.robotAttackPower = PickUpWeapon(); 
+
+
         }
         //member methods
 
@@ -37,7 +38,24 @@ namespace Robots_vs_Dinosaurs
         {
             robotPowerLevel = 100;
         }
-       
+       public int PickUpWeapon()
+        {            
+            Weapon rayGun = new Weapon("Ray Gun", 20);
+            Weapon sword = new Weapon("Sword", 15);
+            Weapon roboFist = new Weapon("Robo-Fist", 10);
+            List<Weapon> weapons = new List<Weapon>() { rayGun, sword, roboFist };
+            Console.WriteLine($"Please choose number of weapon you would like {robotName} to use");
+            for(int i = 0; i< weapons.Count; i++)
+            {
+                Console.WriteLine($"{i+1}) {weapons[i].weapon}");
+            }
+            
+            int indexOfChosenWeapon = Convert.ToInt32(Console.ReadLine())-1;
+            Console.WriteLine($"You armed {robotName} with the {weapons[indexOfChosenWeapon].weapon}\n");
+            return weapons[indexOfChosenWeapon].attackPower;
+
+
+        }
 
     }
 }

@@ -19,7 +19,7 @@ namespace Robots_vs_Dinosaurs
         {
             this.dinoType = type;
             this.dinoHealth = health;
-            this.dinoPower = power;
+            this.dinoPower = ChooseAttackMethod(); //will be replaced by chosen attack method
             dinoEnergy = 100;
         }
         //member methods
@@ -33,7 +33,25 @@ namespace Robots_vs_Dinosaurs
         {
             dinoEnergy = 100;
         }
-        
+
+        public int ChooseAttackMethod()
+        {
+            DinoAttack chomp = new DinoAttack("Chomp", 20);
+            DinoAttack tailWhip = new DinoAttack("Tail Whip", 10);
+            DinoAttack stomp = new DinoAttack("Foot stomp", 15);
+            DinoAttack[] dinoAttacksArray = { chomp, tailWhip, stomp };            
+            Console.WriteLine($"Which attack would you like {dinoType} to use?");
+            int i = 1;
+            foreach (DinoAttack dinoAttack in dinoAttacksArray)
+            {                
+                Console.WriteLine($"{i}) {dinoAttacksArray[i-1].attackMethod}");
+                i++;
+            }
+            int indexOfChosenAttackMethod = Convert.ToInt32(Console.ReadLine())-1;
+            Console.WriteLine($"{dinoType} will attack with {dinoAttacksArray[indexOfChosenAttackMethod].attackMethod}\n");
+            return dinoAttacksArray[indexOfChosenAttackMethod].attackPower;
+        }
+
 
         
     }
